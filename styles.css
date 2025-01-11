@@ -1,0 +1,244 @@
+/* Reset dasar untuk konsistensi */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #87CEFA, #FFFFFF);
+    color: #333;
+    transition: background 0.5s ease-in-out;
+    line-height: 1.5;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Background untuk Siang (Daytime) */
+.daytime {
+    background: linear-gradient(to bottom, #87CEFA, #FFFFFF); 
+}
+/* Background untuk Malam (Nighttime) */
+.nighttime {
+    background: linear-gradient(to bottom, #191970, #FFFFFF); 
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: transparent;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Wrapper untuk cuaca dan grafik */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Kontainer cuaca dan grafik */
+.kontainer-cuaca {
+    text-align: center;
+    width: 48%;
+    margin-top: 30px;
+    margin-bottom: 150px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.kontainer-grafik {
+    text-align: center;
+    width: 48%;
+    margin-top : 30px;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.kontainer-cuaca:hover, .kontainer-grafik:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hide {
+    display: none;
+}
+
+
+.tombol-waktu button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    background-color: #4682B4;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tombol-waktu button:hover {
+    background-color: #5A9FD6;
+}
+
+/* Tanggal forecasting */
+.forecast-date {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Form pencarian */
+.grup-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.grup-input input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.grup-input button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: #4682B4;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.grup-input button:hover {
+    background-color: #5A9FD6;
+}
+
+/* Area Informasi Cuaca */
+#weather-info {
+    padding: 20px;
+    text-align: center;
+    color: #333; 
+    max-width: 400px; 
+    margin: 0 auto; 
+}
+#weather-info #city-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 10px;
+}
+#weather-info #current-time {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+#weather-info #weather-icon {
+    width: 150px; 
+    height: 150x; 
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+    margin: 10px auto;
+    display: block;
+}
+
+#weather-info #description {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #007BFF;
+    margin-bottom: 15px;
+}
+
+#weather-info #temperature {
+    font-size: 2.5rem; 
+    font-weight: bold;
+    color: palevioletred;
+    margin: 10px 0;
+}
+
+#weather-info #wind-speed {
+    font-size: 1rem;
+    color: #888;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+
+/* Footer styling */
+footer {
+    margin-top: auto;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    background-color: #4682B4; 
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+footer a {
+    color: #ffeb3b;
+    text-decoration: none;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .kontainer-cuaca, .kontainer-grafik {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .grup-input input[type="text"] {
+        width: 60%;
+    }
+
+    .grup-input button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+}

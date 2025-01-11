@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Prakiraan Cuaca</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Prakiraan Cuaca</h1>
+        <p>Aplikasi untuk memeriksa cuaca harian Anda</p>
+    </header>
+
+    <!-- Kontainer Utama -->
+    <div class="wrapper">
+        <!-- Kontainer Cuaca -->
+        <div class="kontainer-cuaca">
+            <div class="kontainer">
+                <div class="kartu-cuaca">
+    
+
+                    <!-- Input Nama Kota -->
+                    <div class="grup-input">
+                        <input type="text" id="input-kota" placeholder="Masukkan nama kota">
+                        <button id="tombol-input-kota" onclick="weatherFn($('#input-kota').val())">
+                            <i class="fas fa-search"></i> Cari Kota
+                        </button>
+                    </div>
+
+                    <!-- Error Message -->
+                    <div id="error-message" style="display: none; color: red; font-weight: bold;"></div>
+
+                    <!-- Loading -->
+                    <div id="loading" style="display: none;">Memuat...</div>
+
+                    <!-- Informasi Cuaca -->
+                    <div id="weather-info" class="animate__animated animate__fadeIn" style="display: none;">
+                        <h3 id="city-name">Nama Kota</h3>
+                        <p id="current-time"></p>
+                        <img id="weather-icon" src="" alt="Ikon Cuaca">
+                        <p id="description">Deskripsi Cuaca</p>
+                        <p id="temperature">Suhu: --&deg;C</p>
+                        <p id="wind-speed">Kecepatan Angin: -- m/s</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kontainer Grafik -->
+        <div class="kontainer-grafik">
+            <div class="tombol-waktu">
+                <button id="hourly">Hari ini</button>
+                <button id="next-day">Besok</button>
+                <button id="five-days-forecast">5 Hari Kedepan</button>
+            </div>
+            <h2>Prakiraan Rata-rata Hujan</h2>
+            <p id="rata-rata-hujan">Rata-rata Hujan: <span>--</span> mm</p>
+            <h2>Prakiraan Rata-rata Suhu</h2>
+            <canvas id="chartSuhu"></canvas>
+            <h2>Prakiraan Rata-rata Kecepatan</h2>
+            <canvas id="chartAngin"></canvas>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Data cuaca disediakan oleh <a href="https://openweathermap.org/">OpenWeatherMap</a></p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.40/moment-timezone.min.js"></script>
+    <script src="apps.js"></script>
+</body>
+</html>
